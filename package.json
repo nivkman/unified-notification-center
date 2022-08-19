@@ -1,0 +1,24 @@
+{
+  "name": "unified-notification-center",
+  "version": "1.0.0",
+  "description": "microservice that gather notifications from different places",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nivkman/unified-notification-center.git"
+  },
+  "keywords": [
+    "notification",
+    "email",
+    "telegram"
+  ],
+  "author": "Niv Kaufman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nivkman/unified-notification-center/issues"
+  },
+  "homepage": "https://github.com/nivkman/unified-notification-center#readme"
+}
