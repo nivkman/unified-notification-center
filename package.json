@@ -1,24 +1,31 @@
 {
-  "name": "unified-notification-center",
-  "version": "1.0.0",
-  "description": "microservice that gather notifications from different places",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nivkman/unified-notification-center.git"
-  },
-  "keywords": [
-    "notification",
-    "email",
-    "telegram"
-  ],
-  "author": "Niv Kaufman",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nivkman/unified-notification-center/issues"
-  },
-  "homepage": "https://github.com/nivkman/unified-notification-center#readme"
+    "name": "unified-notification-center",
+    "version": "1.0.0",
+    "description": "microservice that gather notifications from different places",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node src/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nivkman/unified-notification-center.git"
+    },
+    "keywords": [
+        "notification",
+        "email",
+        "telegram"
+    ],
+    "author": "Niv Kaufman",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nivkman/unified-notification-center/issues"
+    },
+    "homepage": "https://github.com/nivkman/unified-notification-center#readme",
+    "dependencies": {
+        "body-parser": "^1.20.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1"
+    }
 }
