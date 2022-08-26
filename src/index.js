@@ -14,8 +14,6 @@ app.use(bodyParser.json());
 
 app.use('/api/v1', require('./routers/v1.js'));
 
-app.get('/:id', (req, res) => res.redirect(`/api/v1/${req.params.id}`));
-
 const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {

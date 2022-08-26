@@ -1,13 +1,21 @@
-const sendMsgToPerson = () => {
-    return 1;
+const { Telegraf } = require('telegraf');
+
+
+const telegramConfiguration = async (token) => {
+    const bot = new Telegraf(token);
+    return bot;
 }
 
-const sendMsgToChanel = () => {
-    return 2;
+const sendMsg = async (args) => {
+    try {
+        const bot = await telegramConfiguration(args.token);
+        await bot.telegram.sendMessage(`-100${args.chat_id}`, args.notification);
+        return { status: 'success' };
+
+    }catch (err) {
+        return { status: 'failed', err };
+    }
+
 }
 
-const sendMsgToGroup = () => {
-    return 3
-}
-
-module.exports = { sendMsgToChanel, sendMsgToGroup, sendMsgToPerson };
+module.exports = { sendMsg };

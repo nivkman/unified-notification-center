@@ -1,19 +1,19 @@
 const router = require('express')();
-const supportedServices = require('../utils/supportedServices');
+const supportedPlatforms = require('../utils/supportedPlatforms');
 
 
-router.post('/send', async(req, res) => {
-    const service = await req.params.service.toLowerCase();
-    const method = await req.params.method.toLowerCase();
+router.post('/send', async (req, res) => {
+    const args = await req.body;
+    const platform = await args.platform.toLowerCase();
+    const method = await args.method.toLowerCase();
 
-    if (!service)
-        return res.status(405).json({ err: "no service has been given" });
+    if (!platform)
+        return res.status(405).json({ err: "no platform has been given" });
 
     if (!method)
         return res.status(405).json({ err: "no method has been given" });
 
-    const selectedMethod = await (supportedServices[service].functions).find((method) => method == req.body.method)
-    const response = await selectedMethod(req.body.args);
+    const response = await supportedPlatforms[platform].methods.find(method => method.name === req.query.method).method(args);
     res.status(200).json(response);
 })
 
