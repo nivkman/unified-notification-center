@@ -1,6 +1,5 @@
 const { Telegraf } = require('telegraf');
 
-
 const telegramConfiguration = async (token) => {
     const bot = new Telegraf(token);
     return bot;
@@ -15,7 +14,6 @@ const sendMsg = async (args) => {
     }catch (err) {
         return { status: 'failed', err };
     }
-
 }
 
 module.exports = { sendMsg };
