@@ -1,10 +1,17 @@
-const { sendMsg } = require('../functions/telegram');
+const { sendTelegramMsg } = require('../functions/telegram');
+const { sendEmailMsg } = require('../functions/email');
 
 const supportedServices = {
     telegram: {
         methods: [{
             name: "sendMsg",
-            method: (args) => sendMsg(args)
+            method: (args) => sendTelegramMsg(args)
+        }]
+    },
+    email: {
+        methods: [{
+            name: "sendMsg",
+            method: (args) => sendEmailMsg(args)
         }]
     }
 }

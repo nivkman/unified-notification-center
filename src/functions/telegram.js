@@ -5,7 +5,7 @@ const telegramConfiguration = async (token) => {
     return bot;
 }
 
-const sendMsg = async (args) => {
+const sendTelegramMsg = async (args) => {
     try {
         const bot = await telegramConfiguration(args.token);
         await bot.telegram.sendMessage(`-100${args.chat_id}`, args.notification);
@@ -16,4 +16,4 @@ const sendMsg = async (args) => {
     }
 }
 
-module.exports = { sendMsg };
+module.exports = { sendTelegramMsg };
