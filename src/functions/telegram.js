@@ -10,7 +10,6 @@ const sendTelegramMsg = async (args) => {
         const bot = await telegramConfiguration(args.token);
         await bot.telegram.sendMessage(`-100${args.chat_id}`, args.notification);
         return { status: 'success' };
-
     }catch (err) {
         return { status: 'failed', err };
     }
